@@ -112,11 +112,11 @@ npx playwright show-report
 
 | TC | Descripción | Resultado esperado |
 |----|-------------|-------------------|
-| CA1 | El usuario puede votar solo con sesión activa | ✅ PASS |
-| CA2 | Sin sesión: botón Vote! y campo comentario no visibles | ✅ PASS |
+| CA1 | El usuario puede votar solo con sesión activa | OK |
+| CA2 | Sin sesión: botón Vote! y campo comentario no visibles | OK |
 | CA3 | Usuario autenticado puede dejar comentario opcional | ❌ FAIL |
 | CA4 | Tabla muestra columnas Date, Author y Comment con datos | ❌ FAIL |
-| CA5 | Vista del auto muestra descripción, especificación y votos | ✅ PASS |
+| CA5 | Vista del auto muestra descripción, especificación y votos | OK |
 
 ---
 
