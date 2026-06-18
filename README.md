@@ -128,7 +128,7 @@ npx playwright show-report
 **Comportamiento esperado:** El campo de comentario debe estar disponible de forma opcional en cualquier momento para usuarios autenticados.  
 **Comportamiento actual:** El formulario solo está disponible antes del primer voto. Una vez votado, desaparece permanentemente.
 
-### BUG-02 — Columna Author vacía (CA4)
+### BUG-02 — Columna Author vacia (CA4)
 **Severidad:** Media  
 **Descripción:** La tabla de comentarios incluye la columna Author en el encabezado pero no muestra el nombre del usuario en ninguna fila.  
 **Comportamiento esperado:** La columna Author debe mostrar el nombre del usuario que dejó el comentario.  
