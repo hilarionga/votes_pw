@@ -13,20 +13,32 @@ Automatización de pruebas para la Historia de Usuario de votación y comentario
 ```bash
 npm init playwright@latest
 # Seleccionar: JavaScript, carpeta tests, no GitHub Actions, instalar browsers
-npx playwright install
+
 ```
 
 ### Linux
 ```bash
 npm init playwright@latest
-npx playwright install
-npx playwright install-deps
+# Seleccionar: JavaScript, carpeta tests, no GitHub Actions, instalar browsers
 ```
+### Linux (Ubuntu): WebKit falla con "WebKit encountered an internal error"
+
+Si usas la terminal integrada de **VS Code instalado vía snap**, este puede inyectar variables de entorno (`GIO_MODULE_DIR`, `GTK_PATH`, `LOCPATH`, etc.) que apuntan a su entorno confinado y rompen el proceso de red de WebKit, causando un conflicto de versión de `libpthread.so.0` con el snap `core20`.
+
+**Solución rápida:**
+```bash
+unset GIO_MODULE_DIR GTK_PATH GTK_EXE_PREFIX GSETTINGS_SCHEMA_DIR LOCPATH GTK_IM_MODULE_FILE
+npx playwright test --project=webkit
+```
+
+**Solución permanente:** correr los tests desde una terminal del sistema (no la integrada de VS Code), o instalar VS Code desde el `.deb` oficial en lugar del snap.
+
+> Este problema es específico de Linux/snap y no ocurre en macOS ni Windows.
 
 ### macOS
 ```bash
 npm init playwright@latest
-npx playwright install
+# Seleccionar: JavaScript, carpeta tests, no GitHub Actions, instalar browsers
 ```
 
 > Si al correr aparece `SyntaxError: Cannot use import statement outside a module`, agregar `"type": "module"` en el `package.json`.
