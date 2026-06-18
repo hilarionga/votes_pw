@@ -78,6 +78,16 @@ O editar directamente las líneas 5-6 de `tests/voting.spec.js`:
 const VALID_USER = 'tu_usuario';
 const VALID_PASS = 'tu_password';
 ```
+usar para probar nuevo comentario líneas 5-6 de `tests/voting.spec.js`:
+```js
+const VALID_USER = process.env.BUGGY_USER || 'guapea';
+const VALID_PASS = process.env.BUGGY_PASS || 'Pass123$';
+```
+usar para probar ya con comentario líneas 5-6 de `tests/voting.spec.js`:
+```js
+const VALID_USER = process.env.BUGGY_USER || 'hitest';
+const VALID_PASS = process.env.BUGGY_PASS || 'Pass123$';
+```
 
 > **Importante:** CA3 consume el voto del usuario. Usar un usuario nuevo si se necesita correr el test completo más de una vez.
 
